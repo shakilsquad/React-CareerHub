@@ -13,36 +13,37 @@ import AppliedJobs from './Components/AppliedJobs/AppliedJobs.jsx';
 import Blog from './Components/Blog/Blog.jsx';
 import EroorPage from './Components/EroorPage/EroorPage.jsx';
 import JobDetails from './Components/JobDetails/JobDetails.jsx';
+import { HelmetProvider } from 'react-helmet-async';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-    children:[
+    children: [
       {
-        path:"/",
-        element:<Home></Home>
+        path: "/",
+        element: <Home></Home>
       },
       {
-        path:'/Statistics',
-        element:<Statistics></Statistics>
+        path: '/Statistics',
+        element: <Statistics></Statistics>
       },
       {
-        path:'/AppliedJobs',
-        element:<AppliedJobs></AppliedJobs>,
-        loader:() => fetch('../jobs.json')
+        path: '/AppliedJobs',
+        element: <AppliedJobs></AppliedJobs>,
+        loader: () => fetch('../jobs.json')
 
       },
       {
-        path:'/ErrorPage',
-        element:<EroorPage></EroorPage>
+        path: '/ErrorPage',
+        element: <EroorPage></EroorPage>
       },
       {
-        path:'/Blog',
-        element:<Blog></Blog>
+        path: '/Blog',
+        element: <Blog></Blog>
       },
       {
-        path:'/Job/:id',
-        element:<JobDetails></JobDetails>,
+        path: '/Job/:id',
+        element: <JobDetails></JobDetails>,
         loader: () => fetch('../jobs.json')
       }
     ]
@@ -51,6 +52,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-     <RouterProvider router={router} />
+    <HelmetProvider>
+      <RouterProvider router={router} />
+    </HelmetProvider>
   </React.StrictMode>,
 )

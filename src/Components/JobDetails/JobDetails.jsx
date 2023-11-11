@@ -8,6 +8,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { saveJobApplication } from '../../utlity/LicalStorage';
+import { Helmet } from 'react-helmet-async';
 
 const JobDetails = () => {
 
@@ -23,6 +24,9 @@ const JobDetails = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>CareerHub | JobDetails</title>
+            </Helmet>
 
             <div className='grid md:grid-cols-4 gap-7 '>
                 <div className='border md:col-span-3 px-1'>

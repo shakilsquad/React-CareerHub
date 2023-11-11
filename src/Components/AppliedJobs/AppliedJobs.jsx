@@ -1,9 +1,13 @@
 import React from 'react';
 import { FaLocationDot } from "react-icons/fa6";
 import { AiOutlineDollar } from "react-icons/ai";
+import { Helmet } from 'react-helmet-async';
 const AppliedJobs = () => {
     return (
         <div>
+            <Helmet>
+                <title>CareerHub | AppliedJobs</title>
+            </Helmet>
             <div className='flex p-6 my-5 w-[1000px] m-auto  gap-12 items-center border-2 rounded-lg'>
                 <div className='bg-[#F4F4F4] w-[240px] h-[240px] rounded-lg'>
                     <div className='w-full flex justify-center '>
@@ -158,7 +162,7 @@ const AppliedJobs = () => {
                     <button className='py-2  px-4 border-2 rounded bg-gradient-to-r from-cyan-500 to-blue-500 text-[#fff] border-[#7E90FE] font-bold'>Apply Now</button>
                 </div>
             </div>
-            
+
             <div className='flex p-6 my-5 w-[1000px] m-auto  gap-12 items-center border-2 rounded-lg'>
                 <div className='bg-[#F4F4F4] w-[240px] h-[240px] rounded-lg'>
                     <div className='w-full flex justify-center '>
